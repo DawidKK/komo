@@ -25,10 +25,13 @@ module.exports = gql`
 
   type Query {
     getGames: [Game]
+    getGame(gameId: ID!): Game
   }
 
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
+    createGame(place: String!): Game!
+    deleteGame(gameId: ID!): String!
   }
 `

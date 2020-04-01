@@ -8,6 +8,7 @@ const resolvers = require('./graphql/resolvers')
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: ({ req }) => ({ req }),
   playground: { version: '1.7.25' }
 })
 
